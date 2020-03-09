@@ -70,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
                 Bundle getData = data.getExtras();
                 String message = getData.getString("message");
 
+                EditText intro_message = (EditText)findViewById(R.id.editText);
+                intro_message.getText().clear();
+                EditText intro_reps = (EditText)findViewById(R.id.editText2);
+                intro_reps.getText().clear();
+
                 TextView helloWorld = findViewById(R.id.textView);
                 helloWorld.setText(message);
             }
