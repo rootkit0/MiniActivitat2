@@ -2,7 +2,6 @@ package com.example.miniactivitat2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             String message = this.editText.getText().toString();
             String reps = this.editText2.getText().toString();
 
-            //Control de errores
+            //Error control
             if(message.isEmpty()) {
                 message = "Bye";
             }
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
             int num_reps = Integer.parseInt(reps);
 
-            //Intent para ejecutar la segunda actividad
+            //Create intent to run second activity
             Intent i = new Intent(MainActivity.this, SecondActivity.class);
             i.putExtra("message", message);
             i.putExtra("num_reps", num_reps);
