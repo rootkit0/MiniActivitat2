@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView message = (TextView)findViewById(R.id.textView);
+        TextView message = (TextView)findViewById(R.id.textView1);
         message.setText("Message");
         EditText intro_message = (EditText)findViewById(R.id.editText);
         intro_message.setText("");
@@ -65,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 1){
+            if(resultCode == RESULT_OK) {
+                Bundle getData = data.getExtras();
+                String message = getData.getString("message");
 
+                TextView helloWorld = findViewById(R.id.textView);
+                helloWorld.setText(message);
+            }
+        }
     }
 }
